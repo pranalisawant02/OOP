@@ -1,0 +1,39 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    string itemName[10];
+    int quantity[10];
+    float price[10];
+    float totalBill = 0;
+    int numItems;
+
+    // Get the number of items
+    cout << "Enter the number of items: ";
+    cin >> numItems;
+
+    // Get the item details
+    for (int i = 0; i < numItems; i++) {
+        cout << "Enter item " << i + 1 << " name: ";
+        cin >> itemName[i];
+        cout << "Enter item " << i + 1 << " quantity: ";
+        cin >> quantity[i];
+        cout << "Enter item " << i + 1 << " price: ";
+        cin >> price[i];
+    }
+
+    // Print the bill
+    cout << "\nGrocery Bill\n";
+    cout << "----------------\n";
+    for (int i = 0; i < numItems; i++) {
+        double itemTotal = quantity[i] * price[i];
+        totalBill += itemTotal;
+        cout << itemName[i] << " x " << quantity[i] << "=₹" << itemTotal << endl;
+    }
+    cout << "----------------\n";
+    cout << "Total Bill: ₹" << totalBill << endl;
+    cout << "----------------\n";
+
+    return 0;
+}
