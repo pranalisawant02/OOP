@@ -1,0 +1,32 @@
+#include <iostream>
+using namespace std;
+
+class arith{
+    public:
+    int add(int x,int y)
+    {
+        cout<<"Sum is:"<<x+y<<endl;
+        return 0;
+    }
+    int swap(int x,int y)
+    {
+        int temp;
+        temp=x;
+        x=y;
+        y=temp;
+        cout<<"After Swapping:"<<x<<"\t"<<y;
+        return 0;
+    }
+};
+
+int main() {
+    int num1,num2;
+    cout<<"Enter the numbers;"<<endl;
+    cin>>num1>>num2;
+    arith a;
+    a.add(num1,num2);
+    cout<<"Before Swapping:"<<num1<<"\t"<<num2<<endl;
+    a.swap(num1,num2);
+    
+   
+}
