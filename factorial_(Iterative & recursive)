@@ -1,0 +1,29 @@
+#include<iostream>
+using namespace std;
+//iterative method
+int it_fact(int n)
+{
+    int res=1;
+    for(int i=2;i<=n;i++)
+    {
+        res*=i;
+    }
+    return res;
+}
+//recursive method
+int re_fact(int n)
+{
+    if (n == 0 || n == 1)
+        return 1;
+    return n * re_fact(n - 1);
+}
+
+
+int main()
+{
+    int num;
+    cout<<"Enter the number:";
+    cin>>num;
+    cout<<"Factorial of"<<" "<<num<<" "<<"is"<<" "<<re_fact(num)<<"!"<<" "<<"#recursive way"<<endl;
+     cout<<"Factorial of"<<" "<<num<<" "<<"is"<<" "<<it_fact(num)<<"!"<<" "<<"#iterative way"<<endl;
+}
