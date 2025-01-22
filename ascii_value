@@ -1,0 +1,13 @@
+#include<iostream>
+using namespace std;
+
+int main()
+{
+    char c;
+    cout<<"Enter any character:";
+    cin>>c;
+    int ascii_value=int(c);
+    
+    cout<<"ASCII VALUE of "<<c<<" is "<<ascii_value<<endl;
+    return 0;
+}
