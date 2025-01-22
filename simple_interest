@@ -1,0 +1,17 @@
+#include <iostream>
+using namespace std;
+int main() {
+    // Write C++ code here
+   float P=1,R,T;
+   cout<<"Enter the Principal amount:";
+   cin>>P;
+   cout<<"Enter the Rate:";
+   cin>>R;
+   cout<<"Enter the Time period:";
+   cin>>T;
+   
+   
+   float SI=(P*T*R)/100;
+   cout<<"Simple Interest:"<<SI;
+   return 0;
+}
