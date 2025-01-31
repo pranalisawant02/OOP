@@ -1,0 +1,42 @@
+#include<iostream>
+#include<string>
+using namespace std;
+
+class Student{
+    public:
+    string name;
+    double *cgpaPtr;
+    //constructor
+    Student(string name,double cgpa)
+    {
+        this->name=name;
+        cgpaPtr=new double;//dynamic allocation
+        *cgpaPtr=cgpa;//dereference
+        
+    }
+    Student(Student &obj)//custom copy constructor
+    {
+        this->name=obj.name;
+        cgpaPtr=new double;//new memory allocation to resolve the problm
+        *cgpaPtr=*obj.cgpaPtr;
+    }
+    void getInfo()
+    {
+        cout<<"Name : "<<name<<endl;
+        cout<<"CgpaPtr : "<<*cgpaPtr<<endl;
+    }
+};
+
+int main()
+{   Student s1("Pranali Sawant",8.4);
+    Student s2(s1);//"neha sawant"
+    s1.getInfo();
+    *(s2.cgpaPtr)=8.7;//we changed s2 ptr but s1 ptr got changed along with
+    s1.getInfo();
+   //default copy constructor
+    
+    s2.name="Neha sawant";
+     s2.getInfo();
+    cout<<"default copy constructor gets called";
+    return 0;
+}
