@@ -1,0 +1,61 @@
+#include <iostream>
+#include<string>
+using namespace std;
+class Teacher{
+    //attributes//properties
+    //implementing Encapsulation//#data hiding
+    private:
+    double salary;
+    
+    public:
+    string name;
+    string dept;
+    string subject;
+    
+    //methods//member functions
+    void changeDept(string newDept)
+    {  
+        dept=newDept;
+    }
+    //setter function sets private variable value
+  
+    //default constructor
+    Teacher(){
+        cout<<"Hi! I am a deafult constructor"<<endl;
+        dept="AIML";
+    }
+    //parametrized constructor
+    Teacher(string name,string dept,string subject, double salary){
+        cout<<"Parameterized constructor is called"<<endl;
+        //using this pointer
+        //left name as a obj & right name as parameter
+         this-> name=name;
+         this->dept=dept;
+         this->subject=subject;
+         this->salary=salary;
+    }
+    //copy constructor
+    Teacher(Teacher &obj)//pass by reference
+    {   cout<<"I am custom copy constructor"<<endl;
+        this->name=obj.name;
+         this->dept=obj.dept;
+          this->subject=obj.subject;
+           this->salary=obj.salary;
+    }
+     void getInfo()
+   {
+       cout<<"Name:"<<name<<endl;
+       cout<<"Subject:"<<subject<<endl;
+   }
+};
+
+
+int main() {
+    //object created
+   Teacher t1("Pranali","AIML","C++",20000);
+   //t1.getInfo();//constructor called after obj gets created
+    Teacher t2(t1);
+    //cout<<"deafult copy constructor gets called"<<endl;
+    t2.getInfo();
+    return 0;
+}
