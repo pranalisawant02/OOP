@@ -1,0 +1,37 @@
+#include<iostream>
+#include<string>
+using namespace std;
+class Person{
+    public:
+        string name;
+        int age;
+        //deafult constructor
+       
+        Person()
+        {
+            
+        }
+    
+};
+class Student:public Person{
+    //name,age,roll no.
+    public:
+    int roll_no;
+    
+    void getInfo()
+    {
+        cout<<"Name:"<<name<<endl;
+        cout<<"Age:"<<age<<endl;
+        cout<<"Roll no:"<<roll_no<<endl;
+        
+    }
+};
+int main()
+{
+    Student s1;
+    s1.name="Pranali";
+    s1.age=20;
+    s1.roll_no=124;
+    s1.getInfo();
+    return 0;
+}
