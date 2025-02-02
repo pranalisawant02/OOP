@@ -1,0 +1,39 @@
+#include <iostream>
+#include<string>
+using namespace std;
+
+class Car{
+    private:
+        string brand;
+        string model;
+        int year;
+        //constructor
+    public:
+    Car(string b,string m,int y):brand(b),model(m),year(y)
+    {
+        
+    }
+    //setter
+    void setInfo(string b,string m,int y)
+    {
+        brand=b;
+        model=m;
+        year=y;
+    }
+    //getter
+    void getInfo()
+    {
+        cout<<"Brand : "<<brand<<" ,Model : "<<model<<" ,Year : "<<year<<endl;
+        
+    }
+};
+int main()
+    {
+        Car myCar("Toyota","Camry",2020);
+        myCar.getInfo();
+        //update info
+        myCar.setInfo("Honda","Civic",2021);
+        myCar.getInfo();
+        return 0;
+    }
+
