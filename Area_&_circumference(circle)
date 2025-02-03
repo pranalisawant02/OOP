@@ -1,0 +1,58 @@
+#include<iostream>
+using namespace std;
+
+class Circle{
+	public:
+		int r;
+		float area;
+		float perimeter;
+	//deafault constructor
+	Circle()
+	{
+		cout<<"\n Enter radius of the circle:";
+		cin>>r;
+		area=3.142*r*r;
+		perimeter=2*3.142*r;
+		cout<<"\nArea:"<<area;
+		cout<<"\nPerimeter:"<<perimeter;
+		
+	}
+	//parameterized constructor
+	Circle(int r1)
+	{
+		r=r1;
+		area=3.142*r*r;
+		perimeter=2*3.142*r;
+		cout<<"\nArea:"<<area<<endl;
+		cout<<"Perimeter:"<<perimeter;
+	}
+	//copy constructor
+	Circle(Circle &obj)
+	{
+		r=obj.r;
+		area=3.142*r*r;
+		perimeter=2*3.142*r;
+		cout<<"\nArea:"<<area<<endl;
+		cout<<"Perimeter:"<<perimeter;
+	}
+	//destructor
+	~Circle()
+	{
+		cout<<"\nHi! I am destructor."<<endl;
+	}
+};
+int main()
+{	
+	Circle c1;
+	cout<<"\nRadius:"<<c1.r<<endl;
+	Circle c2(5);
+	cout<<"\nRadius:"<<c2.r<<endl;
+	
+	{
+		Circle c3=c2;
+		cout<<"\nRadius:"<<c3.r<<endl;
+	}
+	cout<<"Main executed"<<endl;
+	
+	return 0;
+}
