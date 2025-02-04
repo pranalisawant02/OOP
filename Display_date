@@ -1,0 +1,28 @@
+#include <iostream>
+using namespace std;
+
+class Date{
+    private:
+        int dd,mm,yy;
+        
+    public:
+        void setDateInfo(int d,int m,int y)
+        {
+            dd=d;
+            mm=m;
+            yy=y;
+            cout<<"\nDate Object has been created..............\n";
+        }
+        void getDateInfo()
+        {
+            cout<<"\nThe Entered Date is :: ";
+            cout<<dd<<"-"<<mm<<"-"<<yy<<"\n";
+        }
+};
+int main()
+{
+    Date d1;
+    d1.setDateInfo(14,03,2005);
+    d1.getDateInfo();
+    return 0;
+}
