@@ -1,0 +1,50 @@
+#include <iostream>
+#include <vector>
+
+class Solution {
+public:
+    void reverseString(std::vector<char>& s) {
+        int left = 0;
+        int right = s.size() - 1;
+
+        while (left < right) {
+            // Swap characters at left and right indices
+            char temp = s[left];
+            s[left] = s[right];
+            s[right] = temp;
+
+            // Move indices towards the center
+            left++;
+            right--;
+        }
+    }
+
+    void printString(const std::vector<char>& s) {
+        for (char c : s) {
+            std::cout << c << " ";
+        }
+        std::cout << std::endl;
+    }
+};
+
+int main() {
+    Solution solution;
+
+    // Example 1
+    std::vector<char> s1 = {'h', 'e', 'l', 'l', 'o'};
+    std::cout << "Original string: ";
+    solution.printString(s1);
+    solution.reverseString(s1);
+    std::cout << "Reversed string: ";
+    solution.printString(s1);
+
+    // Example 2
+    std::vector<char> s2 = {'H', 'a', 'n', 'n', 'a', 'h'};
+    std::cout << "Original string: ";
+    solution.printString(s2);
+    solution.reverseString(s2);
+    std::cout << "Reversed string: ";
+    solution.printString(s2);
+
+    return 0;
+}
