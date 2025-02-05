@@ -1,0 +1,42 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+bool isVowel(char c) {
+    // Check if the character is a vowel (both lowercase and uppercase)
+    return c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u' ||
+           c == 'A' || c == 'E' || c == 'I' || c == 'O' || c == 'U';
+}
+
+string reverseVowels(string s) {
+    int left = 0, right = s.size() - 1;
+    
+    // Use two pointers to find vowels and swap them
+    while (left < right) {
+        // Move left pointer to the next vowel
+        if (!isVowel(s[left])) {
+            left++;
+        }
+        // Move right pointer to the previous vowel
+        else if (!isVowel(s[right])) {
+            right--;
+        }
+        // If both pointers point to vowels, swap them
+        else {
+            swap(s[left], s[right]);
+            left++;
+            right--;
+        }
+    }
+    return s;
+}
+
+int main() {
+    string s1 = "IceCreAm";
+    string s2 = "leetcode";
+
+    cout << "Reversed vowels in 'IceCreAm': " << reverseVowels(s1) << endl;
+    cout << "Reversed vowels in 'leetcode': " << reverseVowels(s2) << endl;
+
+    return 0;
+}
