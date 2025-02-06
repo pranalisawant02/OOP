@@ -1,0 +1,46 @@
+#include<iostream>
+#include<string>
+using namespace std;
+class Demo{
+	private:
+		int *p;
+	public:
+		Demo& getInfo()
+		{
+			cout<<*p<<endl;
+			return *this;
+		}
+		Demo& setInfo(int v)
+		{    
+			*this->p=v;
+			return *this;
+		}
+		Demo (int x)
+		{
+			p=new int(x);
+		}
+//		Demo(const Demo &obj)
+//		{
+//			p=obj.ptr; //shallow copy
+//		}
+		Demo(const Demo &obj)
+		{
+			p=new int(*(obj.p));//deep copy
+		}
+		~Demo()
+		{
+			delete p;
+			cout<<"Destructor is called."<<endl;
+		}
+};
+int main()
+{
+	Demo d1(111);
+	d1.getInfo();
+	Demo d2(d1);
+	
+	d2.setInfo(222).getInfo();
+	
+	//d2.getInfo();
+	return 0;
+}
