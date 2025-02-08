@@ -1,0 +1,22 @@
+#include <iostream>
+#include <unordered_map>
+
+bool isAnagram(std::string s, std::string t) {
+    if (s.length() != t.length()) return false;
+
+    std::unordered_map<char, int> count;
+    for (char ch : s) count[ch]++;
+    for (char ch : t) {
+        if (count.find(ch) == count.end()) return false;
+        if (--count[ch] < 0) return false;
+    }
+
+    return true;
+}
+
+int main() {
+    std::string s, t;
+    std::cin >> s >> t;
+    std::cout << "Is Anagram: " << std::boolalpha << isAnagram(s, t) << std::endl;
+    return 0;
+}
