@@ -1,0 +1,40 @@
+#include <iostream>
+using namespace std;
+
+void addMatrices(int first[2][2], int second[2][2], int result[2][2]) {
+    for (int i = 0; i < 2; i++) {
+        for (int j = 0; j < 2; j++) {
+            result[i][j] = first[i][j] + second[i][j];
+        }
+    }
+}
+
+int main() {
+    int first[2][2], second[2][2], result[2][2];
+
+    cout << "Enter elements of first 2x2 matrix: \n";
+    for (int i = 0; i < 2; i++) {
+        for (int j = 0; j < 2; j++) {
+            cin >> first[i][j];
+        }
+    }
+
+    cout << "Enter elements of second 2x2 matrix: \n";
+    for (int i = 0; i < 2; i++) {
+        for (int j = 0; j < 2; j++) {
+            cin >> second[i][j];
+        }
+    }
+
+    addMatrices(first, second, result);
+
+    cout << "Sum of the matrices: \n";
+    for (int i = 0; i < 2; i++) {
+        for (int j = 0; j < 2; j++) {
+            cout << result[i][j] << " ";
+        }
+        cout << endl;
+    }
+
+    return 0;
+}
