@@ -1,0 +1,43 @@
+#include<iostream>
+using namespace std;
+//hierarchical inheritance
+class A{
+	public:
+		int a,b;
+		void get1()
+		{
+			cout<<"Enter 2 numbers:"<<endl;
+			cin>>a>>b;
+		}
+	};
+
+class B:public A
+{
+	public:
+		int s;
+		void sum()
+		{
+			s=a+b;
+			cout<<"Sum is:"<<s<<endl;
+		}
+		
+};
+class C:public A
+{
+	public:
+		int d;
+		void diff()
+		{	d=a-b;
+			cout<<"Difference of a & b is:"<<d<<endl;
+		}
+};
+int main()
+{	B obj1;
+	C obj2;
+
+	obj1.get1();
+	obj1.sum();
+	obj2.get1();
+	obj2.diff();
+	return 0;
+}
