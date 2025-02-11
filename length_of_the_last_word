@@ -1,0 +1,37 @@
+#include <iostream>
+#include <string>
+#include <sstream>
+
+class Solution {
+public:
+    int lengthOfLastWord(std::string s) {
+        // Remove trailing spaces from the string
+        while (!s.empty() && s.back() == ' ') {
+            s.pop_back();
+        }
+
+        // Initialize a variable length to 0
+        int length = 0;
+
+        // Iterate through the string from the end to the beginning
+        for (int i = s.size() - 1; i >= 0; --i) {
+            // If a space is encountered, return the current length
+            if (s[i] == ' ') {
+                return length;
+            }
+            // Increment length until the beginning of the string is reached
+            length++;
+        }
+
+        // Return length, which is the length of the last word
+        return length;
+    }
+};
+
+int main() {
+    Solution solution;
+    std::string s = "Hello World";
+    int result = solution.lengthOfLastWord(s);
+    std::cout << "Length of the last word: " << result << std::endl;
+    return 0;
+}
