@@ -1,0 +1,19 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int sumEvenNumbers(const vector<int>& arr) {
+    int sum = 0;
+    for (int num : arr) {
+        if (num % 2 == 0) {
+            sum += num;
+        }
+    }
+    return sum;
+}
+
+int main() {
+    vector<int> arr = {1, 2, 3, 4, 5, 6, 7};
+    cout << "Sum of even numbers: " << sumEvenNumbers(arr) << endl;
+    return 0;
+}
