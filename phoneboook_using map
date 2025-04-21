@@ -1,0 +1,22 @@
+
+#include<iostream>
+#include<map>
+#include<algorithm>
+using namespace std;
+
+int main()
+{
+	map<string,string> phonebook;
+	phonebook["abc"]="123456789";
+	phonebook["xyz"]="987654321";
+	string name;
+	
+	cout<<"Enter the name:";
+	cin>>name;
+	if(phonebook.find(name)!=phonebook.end())
+	    cout<<name<<" : "<<phonebook[name];
+	else
+	    cout<<name<<" Not found";
+	    
+	return 0;
+}
